@@ -51,7 +51,6 @@
           <a href="#" class="login-modal">Login</a>
           <a href="#" class="register-modal">Register</a>
           <a href="#" onclick="Reset()">Reset Password</a>
-          <a href="#" onclick="ChangePassword()">Change Password</a>
       </div>
     </div>
     <!-- Views-->
@@ -205,28 +204,22 @@ function Reset() {
       }
     });
   }
- function ChangePassword() { 
-  var ref = new Firebase("https://rubychat.firebaseio.com");
-  myApp.prompt('Choose a new password', 
-      function (passwordnew) {
-        myApp.alert('Your new password is "' + passwordnew + '".');
-      
-      },
-     
-    );
-  ref.changePassword({
-  email       : ''+email+'',
-  oldPassword : ''+password+'',
-  newPassword : ''+passwordnew+''
-}, function(error) {
-  if (error === null) {
-    console.log("Password changed successfully");
-  } else {
-    console.log("Error changing password:", error);
-  }
-});
-}
 </script>
+<!--<script>
+    function Reset() {
+      var ref = new Firebase("https://rubychat.firebaseio.com");
+    
+    ref.resetPassword({
+      email : "bobtony@firebase.com"
+    }, function(error) {
+      if (error === null) {
+        console.log("Password reset email sent successfully");
+      } else {
+        console.log("Error sending password reset email:", error);
+      }
+    });
+  }
+</script>-->
 <script type="text/javascript">
   var __rodeo_config = {
     'clientId': '2fa05943fbd1bca2be0011651baca3bcb91203ac61dd70d1cdbb7e1a3a5bcbbc',
