@@ -138,7 +138,7 @@
     nameElement.text(username);
     messageElement.text(message).prepend(nameElement);
 
-        if (messageElement.text(message) === 'Hey Time') {
+        if (message === 'Hey Time') {
     setTimeout(function() {
 msg.push({name: 'Time [HAPPY]', message: 'Hey User My Name Is Time, How Can I Help You Today?'});
 },500);
