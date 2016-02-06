@@ -91,7 +91,7 @@
             </div>
             <div class="toolbar messagebar">
   <div class="toolbar-inner">
-    <textarea id="messageInput" placeholder="Type a message..."></textarea>
+    <textarea id="messageInput" placeholder="Type a message..."></textarea><div data-rodeo></div>
   </div>
 </div>   
           </div>  
@@ -191,5 +191,19 @@ $$('.login-modal').on('click', function () {
     });
 });
 </script>
+<script type="text/javascript">
+  var __rodeo_config = {
+    'clientId': '2fa05943fbd1bca2be0011651baca3bcb91203ac61dd70d1cdbb7e1a3a5bcbbc',
+    'theme': 'slack'
+  };
+
+  var d = document.getElementsByTagName('head')[0],
+  s = document.createElement('script');
+
+  s.type = 'text/javascript';
+  s.src = '//cdn.emoji.rodeo/dist.js';
+  d.appendChild(s);
+</script>
+
   </body>
 </html>
