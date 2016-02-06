@@ -43,7 +43,8 @@
   <body onload="start();">
   <script>
     function start() {
-  msg.push({name: 'Time [HAPPY]', message: 'Hey User My Name Is Time, How Can I Help You Today?'});
+        msg.push({name:username, text:message});
+      messageField.val(' ');
   setTimeout(start, 3000);
 }
   </script>
