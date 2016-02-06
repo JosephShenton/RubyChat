@@ -121,11 +121,6 @@
       //SAVE DATA TO FIREBASE AND EMPTY FIELD
       msg.push({name:username, text:message});
       messageField.val(' ');
-    if (messageElement.text === 'Hey Time') {
-    setTimeout(function() {
-msg.push({name: 'Time [HAPPY]', message: 'Hey User My Name Is Time, How Can I Help You Today?'});
-},500);
-}
     }
 
   });
@@ -143,6 +138,11 @@ msg.push({name: 'Time [HAPPY]', message: 'Hey User My Name Is Time, How Can I He
     nameElement.text(username);
     messageElement.text(message).prepend(nameElement);
 
+        if (messageElement.text(message) === 'Hey Time') {
+    setTimeout(function() {
+msg.push({name: 'Time [HAPPY]', message: 'Hey User My Name Is Time, How Can I Help You Today?'});
+},500);
+}
     //ADD MESSAGE
     messageList.append(messageElement)
 
@@ -191,6 +191,15 @@ $$('.login-modal').on('click', function () {
     });
 });
 
+</script>
+
+<script>
+  var fredRef = new Firebase('https://rubychat.firebaseio.com/msg');
+
+  function clear() {
+    fredRef.remove();
+    location.reload(true);
+  }
 </script>
 
 <script type="text/javascript">
