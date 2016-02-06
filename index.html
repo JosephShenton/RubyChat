@@ -209,7 +209,11 @@ function Reset() {
   myApp.prompt('Choose a new password', 
       function (passwordnew) {
         myApp.alert('Your new password is "' + passwordnew + '".');
-      ref.changePassword({
+      
+      },
+     
+    );
+  ref.changePassword({
   email       : ''+email+'',
   oldPassword : ''+password+'',
   newPassword : ''+passwordnew+''
@@ -220,9 +224,6 @@ function Reset() {
     console.log("Error changing password:", error);
   }
 });
-      },
-     
-    );
 }
 </script>
 <script type="text/javascript">
