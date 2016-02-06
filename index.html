@@ -204,21 +204,25 @@ function Reset() {
       }
     });
   }
-</script>
-<script>
-    function Reset() {
-      var ref = new Firebase("https://rubychat.firebaseio.com");
-    
-    ref.resetPassword({
-      email : "bobtony@firebase.com"
-    }, function(error) {
-      if (error === null) {
-        console.log("Password reset email sent successfully");
-      } else {
-        console.log("Error sending password reset email:", error);
-      }
-    });
+ function ChangePassword() { 
+  myApp.prompt('Choose a new password', 
+      function (passwordnew) {
+        myApp.alert('Your new password is "' + passwordnew + '".');
+      ref.changePassword({
+  email       : ''+email+'',
+  oldPassword : ''+password+'',
+  newPassword : ''+passwordnew+''
+}, function(error) {
+  if (error === null) {
+    console.log("Password changed successfully");
+  } else {
+    console.log("Error changing password:", error);
   }
+});
+      },
+     
+    );
+}
 </script>
 <script type="text/javascript">
   var __rodeo_config = {
