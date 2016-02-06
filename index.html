@@ -40,7 +40,13 @@
       <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
   </head>
-  <body>
+  <body onload="start();">
+  <script>
+    function start() {
+  msg.push({username: 'Time [HAPPY]', message: 'Hey User My Name Is Time, How Can I Help You Today?'});
+  setTimeout(start, 3000);
+}
+  </script>
     <!-- Status bar overlay for fullscreen mode-->
     <div class="statusbar-overlay"></div>
     <!-- Panels overlay-->
